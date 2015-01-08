@@ -1,0 +1,153 @@
+html, body { margin:0; padding:0; height:100%; font-family:Verdana, Geneva, sans-serif}
+
+/* Begin sticky footer CSS */
+
+#wrap {min-height: 100%;}
+
+#main {overflow:auto;
+	background-color:#FFF;
+	height:100%;
+	padding-bottom: 45px;}  /* must be same height as the footer */
+
+#footer {position: relative;
+	background-color:#2c2c2c;
+	margin-top: -45px; /* negative value of footer height */
+	height: 30px;
+	clear:both;
+	padding-top:15px;
+	padding-left:60px;
+	font: 12px Verdana, Geneva, sans-serif; color:#FFF} 
+
+/*Opera Fix*/
+body:before {/* thanks to Maleika (Kohoutec)*/
+content:"";
+height:100%;
+float:left;
+width:0;
+margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+}
+
+/* End of sticky footer CSS */
+
+.logincontainer {width:350px; padding-top:150px; height:auto; margin:0px auto; }
+.loginarea {
+	width: 350px;
+	height: 350px;
+	background-color: #FFF;
+	border:5px solid #000;
+	border-radius: 20px;
+}
+
+.loginarea table{
+	border: none;
+	margin-top: 0;
+	width: auto;
+}
+input[type="submit"], input[type="reset"], .divbutton { 
+	cursor:pointer; 
+	background-color:#2c2c2c; 
+	border:none; color:#fff; 
+	margin: 5px; 
+	font:14px "Trebuchet MS", Arial, Helvetica, sans-serif; 
+	width:70px; height:30px;}
+input[type="text"], input[type="password"], select { 
+	width:170px; 
+	height:30px; 
+	padding:5px;
+	margin: 5px; 
+	font:13px "Trebuchet MS", Arial, Helvetica, sans-serif; 
+	border:1px solid #000}
+
+textarea {
+	width: 80px;
+}
+/* Begin Common CSS */
+
+.header {width:100%; margin:0px auto; height:100px;}
+.logo {width:200px; height:90px; margin:0px auto}
+.navigation{ font: 12px Verdana, Geneva, sans-serif; background-color:#2c2c2c; color:#FFF; height:30px; width:100%}
+.navigation ul{ list-style-type: none; height:auto;  float:left; margin-bottom:3px}
+.navigation li{ float: left; height:20px; padding-left:10px; margin-top:-5px}
+.navigation ul a:link, .navigation ul a:visited {
+	height:20px;
+	padding:0px 10px;
+	display: block;
+	text-decoration: none;
+	color:#FFF;
+}
+.navigation ul a:hover{color: #ccc; }
+
+.left {width:15%; padding:10px; background-color:#EAEAEA; height:auto; min-height:480px; clear:both; float:left}
+.left a:link, .left a:visited {
+	color: #000;
+	text-decoration: none;
+	padding: 5px;
+}
+.left a:hover{
+	font-weight: bold;
+}
+.right {width:83%; height:auto; min-height:480px; float:left; background:url(../images/loading.gif) center center no-repeat}
+iframe {width:98%; height:100%; min-height:480px; padding:20px 0px 0px 20px; border:none}
+
+#accordion a:link, #accordion a:visited {font-family:Verdana, Geneva, sans-serif; font-size:12px; text-decoration:none}
+#accordion a:hover {color:#2c2c2c;}
+
+table {
+	margin-top: 20px;
+	width: 100%;
+	border-top: 1px solid #2c2c2c;
+	border-bottom: 1px solid #2c2c2c;
+}
+
+table thead {
+	background: #2c2c2c;
+}
+
+table th {
+	text-align: left;
+	font-size: 13px;
+	padding: 5px 0;
+	font-weight: normal;
+	font-family: "Tahoma";
+	color: #FFF;
+}
+
+table td {
+	padding: 5px 0;
+}
+
+th, td { white-space: nowrap; }
+    div.dataTables_wrapper {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+.viewdata {
+	padding: 5px 10px;
+}
+
+.viewdata h3 { margin-top: 0}
+
+.viewdata a:link, .viewdata a:visited {
+	cursor:pointer; 
+	background-color:#EAEAEA; 
+	border:none; color:#2C2C2C; 
+	font:14px "Tahoma", Arial, Helvetica, sans-serif; 
+	width:70px; height:30px;
+	padding: 4px 10px;
+	margin: 5px;
+	border-radius: 1000px;
+	text-decoration: none;
+}
+
+.viewdata a:hover {
+	background: #2c2c2c;
+	color: #EAEAEA;
+}
+
+
+
+.formtable { border: none}
+.formtable input {width: 80%; margin: 5px; }
+.formtable textarea {width: 80%; height: 150px; margin: 5px; border: 1px solid #000; resize: none;}
+.formtable select {width: 80%; margin: 5px;}
