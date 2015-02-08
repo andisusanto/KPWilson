@@ -1,3 +1,4 @@
+<?php include_once('checklogin.php'); ?>
 <link rel="stylesheet" type="text/css" href="css/weefer_inventory.css">
 <link rel="stylesheet" type="text/css" href="inc/datatable/css/jquery.dataTables.min.css">
 
@@ -23,7 +24,7 @@
            include_once('classes/Location.php');
            include_once('classes/Connection.php');
            $Conn = Connection::get_DefaultConnection();
-           $ItemLocationHistorys = ItemLocationHistory::LoadCollection($Conn);
+           $ItemLocationHistorys = ItemLocationHistory::LoadCollection($Conn, "Location <> 17 AND Location <> 18");
            foreach($ItemLocationHistorys as $ItemLocationHistory){ ?>
        <tr>
                 <td><?php 
@@ -35,7 +36,12 @@
                   echo $Location->Name; ?>
                 </td>
                 <td><?php echo date_format(New DateTime($ItemLocationHistory->Since), 'Y-m-d'); ?></td>
-                <td><?php echo date_format(New DateTime($ItemLocationHistory->Until), 'Y-m-d'); ?></td>
+                <td>
+                  <?php 
+                    if (is_null($ItemLocationHistory->Until)){$Until = "Ongoing";}else{$Until = date_format(New DateTime($ItemLocationHistory->Until), 'Y-m-d');}
+                    echo $Until 
+                  ?>
+                </td>
               
               
        </tr>

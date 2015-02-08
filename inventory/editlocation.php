@@ -1,3 +1,4 @@
+<?php include_once('checklogin.php'); ?>
 <link rel="stylesheet" type="text/css" href="css/weefer_inventory.css">
 
 <script type="text/javascript" src="inc/datatable/js/jquery.js"></script>
@@ -10,7 +11,7 @@ include_once('classes/Connection.php');
 $Conn = Connection::get_DefaultConnection();
 $Location = Location::GetObjectByKey($Conn, $_GET['Id']);
 ?>
-<h3>Edit Location Information</h3>
+<h3>Edit Mutation Point Information</h3>
 <form action="processeditlocation.php" method="POST" name="frmUpdateLocation" enctype="multipart/form-data">
    <input type="hidden" name="Id" value="<?php echo $Location->get_Id();?>">
 

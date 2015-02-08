@@ -1,17 +1,16 @@
+<?php include_once('checklogin.php'); ?>
 <link rel="stylesheet" type="text/css" href="css/weefer_inventory.css">
 <link rel="stylesheet" type="text/css" href="inc/datatable/css/jquery.dataTables.min.css">
 
 <div class="viewdata">
-  <h3>Location Master Data</h3>
-<a class="linkbutton" href="addlocation.php">Add New Location</a>
+  <h3>Mutation Point Data</h3>
+<a class="linkbutton" href="addlocation.php">Add New Mutation Point</a>
 <div>&nbsp;</div>
 <table id="viewdata" class="hover" width="100%">
    <thead>
        <tr>
             <th>Code</th>
             <th>Name</th>
-            <th>ContactNumber</th>
-            <th>Address</th>
             <th>Type</th>
             <th>IsActive</th>
            <th>Actions</th>
@@ -29,9 +28,7 @@
                 <td><?php echo $Location->Code; ?></td>
                 
                 <td><?php echo $Location->Name; ?></td>
-                <td><?php echo $Location->ContactNumber; ?></td>
-                <td><?php echo $Location->Address; ?></td>
-
+                
                 <td>
                   <?php
                     $LocationType = LocationType::GetObjectByKey($Conn, $Location->Type);
@@ -43,7 +40,7 @@
                <td>
                    <div>
                        <a href="CheckLocationItem.php?Id=<?php echo $Location->get_Id(); ?>">Check</a>
-                       <a href="ProsessSetInActive.php?Id=<?php echo $Location->get_Id(); ?>">Inactive</a>
+                       <a href="ProsessSetLocationInActive.php?Id=<?php echo $Location->get_Id(); ?>">Inactive</a>
                        <a href="editlocation.php?Id=<?php echo $Location->get_Id(); ?>">edit</a>
                        <a href="processdeletelocation.php?Id=<?php echo $Location->get_Id(); ?>">delete</a>
                    </div>

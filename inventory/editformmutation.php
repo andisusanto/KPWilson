@@ -1,3 +1,4 @@
+<?php include_once('checklogin.php'); ?>
 <link rel="stylesheet" type="text/css" href="css/weefer_inventory.css">
 <link rel="stylesheet" type="text/css" href="inc/jqueryUI/css/smoothness/jquery-ui-1.10.3.custom.min.css">
 

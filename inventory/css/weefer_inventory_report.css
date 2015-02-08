@@ -1,0 +1,20 @@
+.report {
+	width: 90%;
+	margin: 10px auto;
+	color: #000;
+	font:12px "Tahoma";	 
+}
+
+.report table {
+	width: 100%;
+	text-align: left;
+}
+table th {
+	background: #CCC;
+	padding: 3px 5px;
+}
+
+.report table tr td {
+	border-bottom: 1px solid #CCC;
+	padding:5px;
+}

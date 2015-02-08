@@ -66,7 +66,6 @@ class ItemLocationHistory extends BaseObject{
                $tmpItemLocationHistory->Admin = $row['Admin'];
                $ItemLocationHistorys[] = $tmpItemLocationHistory;
            }
-           echo $tmpQuery;
            return $ItemLocationHistorys;
 
        }

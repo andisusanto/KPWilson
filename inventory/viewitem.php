@@ -1,8 +1,9 @@
+<?php include_once('checklogin.php'); ?>
 <link rel="stylesheet" type="text/css" href="css/weefer_inventory.css">
 <link rel="stylesheet" type="text/css" href="inc/datatable/css/jquery.dataTables.min.css">
 <div class="viewdata">
-<h3>Item Master Data</h3>
-<a class="linkbutton" href="additem.php">Add New Item</a>
+<h3>Company Asset Data</h3>
+<a class="linkbutton" href="additem.php">Add New Asset</a>
 <div>&nbsp;</div>
 <table id="viewdata" class="hover">
    <thead>

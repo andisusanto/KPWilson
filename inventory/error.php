@@ -16,7 +16,7 @@
 <div class="errormsg">
     <?php echo get_class($ex).":<br />"; ?>
     <p><?php echo $ex->getMessage(); ?></p>
-<p><span style="padding: 5px 15px; background-color: #FFa200; cursor: pointer; border-radius: 7px" onclick="history.back()">Back</span></p>
+<p><span style="padding: 5px 15px; background-color: #000; color:#FFF; font-family: Tahoma; cursor: pointer; border-radius: 7px" onclick="history.back()">Back</span></p>
 </div>
 </body>
 </html>

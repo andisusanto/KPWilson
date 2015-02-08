@@ -1,23 +1,31 @@
+<?php include_once('checklogin.php'); ?>
 <link rel="stylesheet" type="text/css" href="css/weefer_inventory.css">
 <link rel="stylesheet" type="text/css" href="inc/jqueryUI/css/smoothness/jquery-ui-1.10.3.custom.min.css">
 
 <script type="text/javascript" src="inc/datatable/js/jquery.js"></script>
 <script type="text/javascript" src="inc/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="inc/jqueryUI/js/jquery-ui-1.10.3.custom.min.js"></script>
+<link rel="stylesheet" type="text/css" href="inc/formValidation/css/validationEngine.jquery.css" />
+<script type="text/javascript" src="inc/formValidation/js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="inc/formValidation/js/languages/jquery.validationEngine-en.js"></script>
 <script type="text/javascript">
   $(function() {
     $( "#TransDate" ).datepicker({dateFormat: "yy-m-dd"});
     $( "#EffectiveDate" ).datepicker({dateFormat: "yy-m-dd"});
   });
 </script>
-
+<script type="text/javascript">
+        $(document).ready(function () {
+            $("#frmAddItemLocationMutation").validationEngine();
+        });
+    </script>
 <?php
 include_once('classes/Connection.php');
 $Conn = Connection::get_DefaultConnection();
 if (isset($_GET['ItemId'])){ $ItemId = $_GET['ItemId'];}else{ $ItemId = '';}
 ?>
-<h3>Item Mutation</h3>
-<form action="processaddmutation.php" method="POST" name="frmAddItemLocationMutation" enctype="multipart/form-data">
+<h3>Asset Mutation</h3>
+<form action="processaddmutation.php" method="POST" name="frmAddItemLocationMutation" id="frmAddItemLocationMutation" enctype="multipart/form-data">
      
    <table class="formtable">
         <tr>
@@ -28,7 +36,7 @@ if (isset($_GET['ItemId'])){ $ItemId = $_GET['ItemId'];}else{ $ItemId = '';}
         <tr>
             <td>TransDate</td>
             <td>:</td>
-            <td><input type="text" name="TransDate" id="TransDate"></td>
+            <td><input type="text" name="TransDate" class="validate[required, custom[date]]" id="TransDate"></td>
         </tr>
         <tr>
             <td>Item</td>
@@ -75,12 +83,12 @@ if (isset($_GET['ItemId'])){ $ItemId = $_GET['ItemId'];}else{ $ItemId = '';}
         <tr>
             <td>Effective Date</td>
             <td>:</td>
-            <td><input type="text" name="EffectiveDate" id="EffectiveDate"></td>
+            <td><input type="text" name="EffectiveDate" class="validate[required, custom[date]]" id="EffectiveDate"></td>
         </tr>
         <tr>
             <td>Note</td>
             <td>:</td>
-            <td><textarea name="Note"></textarea></td>
+            <td><textarea name="Note" class="validate[required]"></textarea></td>
         </tr>
         <tr>
             <td>&nbsp;</td>

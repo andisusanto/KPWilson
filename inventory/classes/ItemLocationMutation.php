@@ -51,6 +51,32 @@ class ItemLocationMutation extends BaseObject{
            throw new InvalidQueryException;
        }
    }
+   public static function GetObjectByHistoryKey($mySQLi, $Id){
+       if($result = $mySQLi->query("SELECT * FROM ".self::TABLENAME." WHERE ItemLocationHistory = ".$mySQLi->real_escape_string($Id)." LIMIT 1")){
+           if($row = $result->fetch_array()){
+               $tmpItemLocationMutation = new ItemLocationMutation($mySQLi);
+               $tmpItemLocationMutation->Id = $row['Id'];
+               $tmpItemLocationMutation->Admin = $row['Admin'];
+               $tmpItemLocationMutation->EffectiveDate = $row['EffectiveDate'];
+               $tmpItemLocationMutation->Note = $row['Note'];
+               $tmpItemLocationMutation->Code = $row['Code'];
+               $tmpItemLocationMutation->Item = $row['Item'];
+               $tmpItemLocationMutation->ToLocation = $row['ToLocation'];
+               $tmpItemLocationMutation->TransDate = $row['TransDate'];
+               $tmpItemLocationMutation->ItemLocationHistory = $row['ItemLocationHistory'];
+               $tmpItemLocationMutation->LockField = $row['LockField'];
+               return $tmpItemLocationMutation;
+           }
+           else
+           {
+               return false;
+           }
+       }
+       else
+       {
+           throw new InvalidQueryException;
+       }
+   }
    public static function LoadCollection($mySQLi, $Criteria = '1 = 1',$sort='',$page=0,$totalitem=0){
        $tmpQuery = "SELECT  * FROM ".self::TABLENAME." WHERE ".$mySQLi->real_escape_string($Criteria);
        if ($sort != ''){ $tmpQuery .= " "."ORDER BY ".$sort; }

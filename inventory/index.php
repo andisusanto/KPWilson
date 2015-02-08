@@ -1,6 +1,5 @@
 <?php
     include_once('checklogin.php');
-    include_once('checkchangepassword.php');
     include_once('classes/Admin.php');
 ?>
 
@@ -10,8 +9,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/weefer_inventory.css" />
 <link rel="stylesheet" type="text/css" href="inc/jqueryUI/css/smoothness/jquery-ui-1.10.3.custom.css" />
+<link rel="stylesheet" type="text/css" href="inc/formValidation/css/validationEngine.jquery.css" />
 <script type="text/javascript" src="inc/jqueryUI/js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="inc/jqueryUI/js/jquery-ui-1.10.3.custom.js"></script>
+<script type="text/javascript" src="inc/formValidation/js/jquery.validationEngine.js"></script>
 <script>
 	$(function() {
 		var icons = {
@@ -76,10 +77,14 @@
                 
         </div>-->
 
-                    <a href='viewitem.php' target='mainframe'>Item</a><br />
-                    <a href='viewlocation.php' target='mainframe'>Location</a><br />
-                    <a href='viewmutation.php' target='mainframe'>Lend Transaction</a><br />
-                    <a href='viewspoileditem.php' target='mainframe'>Spoiled Item</a><br />                
+                    <a href='viewitem.php' target='mainframe'>Company Asset</a><br />
+                    <a href='viewlocation.php' target='mainframe'>Mutation Point</a><br />
+                    <a href='viewmutation.php' target='mainframe'>Asset Mutation</a><br />
+                    <a href='viewspoileditem.php' target='mainframe'>Spoiled Item</a><br />
+                    <a href='reportitemstatus.php' target="_blank" target='mainframe'>Asset Status Report</a><br />
+                    <a href='reportitemhistory.php' target='mainframe'>Asset History Report</a><br />
+                    <a href='reportlocationhistory.php' target='mainframe'>Mutation Point Report</a><br />
+                                    
         </div>
         <div class="right"><iframe name="mainframe" src="viewhistory.php" frameborder="0"></iframe></div>
         

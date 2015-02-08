@@ -1,3 +1,4 @@
+<?php include_once('checklogin.php'); ?>
 <?php
 session_start();
 include_once('classes/SpoiledItem.php');
@@ -20,7 +21,6 @@ try {
    $Conn->Commit();
    header('location:ViewItem.php');
 } catch (Exception $e) {
-   echo $e;
-   //include('error_handler.php');
+   include('error_handler.php');
 }
 ?>

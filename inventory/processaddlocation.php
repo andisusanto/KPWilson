@@ -1,3 +1,4 @@
+<?php include_once('checklogin.php'); ?>
 <?php
 include_once('classes/Location.php');
 include_once('classes/Connection.php');

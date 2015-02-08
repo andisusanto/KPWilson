@@ -1,3 +1,4 @@
+<?php include_once('checklogin.php'); ?>
 <link rel="stylesheet" type="text/css" href="css/weefer_inventory.css">
 
 <link rel="stylesheet" type="text/css" href="inc/datatable/css/jquery.dataTables.min.css">

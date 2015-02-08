@@ -77,7 +77,7 @@ textarea {
 }
 .navigation ul a:hover{color: #ccc; }
 
-.left {width:15%; padding:10px; background-color:#EAEAEA; height:auto; min-height:480px; clear:both; float:left}
+.left {width:16%; padding:10px; background-color:#EAEAEA; height:auto; min-height:480px; clear:both; float:left}
 .left a:link, .left a:visited {
 	color: #000;
 	text-decoration: none;
@@ -86,7 +86,7 @@ textarea {
 .left a:hover{
 	font-weight: bold;
 }
-.right {width:83%; height:auto; min-height:480px; float:left; background:url(../images/loading.gif) center center no-repeat}
+.right {width:82%; height:auto; min-height:480px; float:left; background:url(../images/loading.gif) center center no-repeat}
 iframe {width:98%; height:100%; min-height:480px; padding:20px 0px 0px 20px; border:none}
 
 #accordion a:link, #accordion a:visited {font-family:Verdana, Geneva, sans-serif; font-size:12px; text-decoration:none}

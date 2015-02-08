@@ -1,3 +1,4 @@
+<?php include_once('checklogin.php'); ?>
 <link rel="stylesheet" type="text/css" href="css/weefer_inventory.css">
 
 <script type="text/javascript" src="inc/datatable/js/jquery.js"></script>
@@ -9,7 +10,7 @@ $Conn = Connection::get_DefaultConnection();
 $Item = Item::GetObjectByKey($Conn, $_GET['Id']);
 ?>
 
-<h3>Edit Item Information</h3>
+<h3>Edit Asset Information</h3>
 <form action="processedititem.php" method="POST" name="frmUpdateItem" enctype="multipart/form-data">
 <input type="hidden" name="Id" value="<?php echo $Item->get_Id();?>">
     <table class="formtable">

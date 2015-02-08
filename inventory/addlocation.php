@@ -1,26 +1,35 @@
+<?php include_once('checklogin.php'); ?>
 <link rel="stylesheet" type="text/css" href="css/weefer_inventory.css">
 <script type="text/javascript" src="inc/datatable/js/jquery.js"></script>
 <script type="text/javascript" src="inc/ckeditor/ckeditor.js"></script>
+
+<link rel="stylesheet" type="text/css" href="inc/formValidation/css/validationEngine.jquery.css" />
+<script type="text/javascript" src="inc/formValidation/js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="inc/formValidation/js/languages/jquery.validationEngine-en.js"></script>
 
 
 <?php
 include_once('classes/Connection.php');
 $Conn = Connection::get_DefaultConnection();
 ?>
-
-<h3>New Location Information</h3>
-<form action="processaddlocation.php" method="POST" name="frmAddLocation" enctype="multipart/form-data">
+<script type="text/javascript">
+        $(document).ready(function () {
+            $("#frmAddLocation").validationEngine();
+        });
+    </script>
+<h3>New Asset Point Information</h3>
+<form action="processaddlocation.php" method="POST" name="frmAddLocation" id="frmAddLocation" enctype="multipart/form-data">
 
    <table class="formtable">
         <tr>
             <td style="width:20%">Code</td>
             <td>:</td>
-            <td><input type="text" name="Code"></td>
+            <td><input type="text" class="validate[required]" name="Code"></td>
         </tr>
         <tr>
             <td>Name</td>
             <td>:</td>
-            <td><input type="text" name="Name"></td>
+            <td><input type="text" class="validate[required]" name="Name"></td>
         </tr>
         <tr>
             <td>Contact Number</td>

@@ -1,3 +1,4 @@
+<?php include_once('checklogin.php'); ?>
 <?php
 session_start();
 include_once('classes/LocationType.php');
